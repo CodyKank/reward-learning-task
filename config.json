@@ -2,7 +2,7 @@
     "cognitive_atlas_task_id": "",
     "instructions":"Respond to the stimuli on the screen.",
     "description":"Reward learning experiment",
-    "url":"https://www.github.com/expfactory-experiments/attention-network-task",
+    "url":"https://www.github.com/expfactory-experiments/reward-learning-task",
     "contributors": [
         "G. Elliott Wimmer",
         "Ian Eisenberg",
@@ -11,7 +11,6 @@
         "Vanessa Sochat",
         "Russell Poldrack"
     ],
-    "exp_id": "reward-learning-task",
     "exp_id": "reward-learning-task",
     "name": "Reward Learning",
     "template": "jspsych",
