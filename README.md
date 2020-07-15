@@ -11,15 +11,21 @@ and then listed in [js/list.js](js/list.js)
 
 These instructions are also available [here](https://expfactory.github.io/generate#quick-start).
 
-### 1. Create a working directory
+First, create a working directory
 
 ```bash
 mkdir -p /tmp/reward-learning
 cd /tmp/reward-learning
 ```
 
-### 2. See experiments available
+Then see experiments available
 
 ```bash
 docker run quay.io/vanessa/expfactory-builder list
+```
+
+Generate a container with the reward-learning-task
+
+```bash
+docker run -v $PWD:/data quay.io/vanessa/expfactory-builder build https://github.com/expfactory-experiments/reward-learning-task
 ```

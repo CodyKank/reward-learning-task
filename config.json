@@ -15,6 +15,6 @@
     "exp_id": "reward-learning-task",
     "name": "Reward Learning",
     "template": "jspsych",
-    "reference":"http://science.sciencemag.org/content/338/6104/270",
+    "reference":["http://science.sciencemag.org/content/338/6104/270"],
     "time": 15
 }
