@@ -27,5 +27,31 @@ docker run quay.io/vanessa/expfactory-builder list
 Generate a container with the reward-learning-task
 
 ```bash
-docker run -v $PWD:/data quay.io/vanessa/expfactory-builder build https://github.com/expfactory-experiments/reward-learning-task
+docker run -v $PWD:/data quay.io/vanessa/expfactory-builder build reward-learning-task
 ```
+
+The message will tell you the next step - to build your container! And actually,
+you would be best off (if you want to share or reproduce this) to add the Dockerfile
+to a GitHub repository and then have an automated build.
+
+```bash
+Expfactory Version: 3.16
+LOG Recipe written to /data/Dockerfile
+
+To build, cd to directory with Dockerfile and:
+              docker build --no-cache -t expfactory/experiments .
+```
+
+The `/data` folder in the container is where you just bound the present working directory,
+so our Dockerfile and entrypoint script are actually right here!
+
+```bash
+$ ls
+Dockerfile  startscript.sh
+```
+We could build that as follows:
+
+```bash
+docker build -t reward-learning .
+```
+
