@@ -55,3 +55,26 @@ We could build that as follows:
 docker build -t reward-learning .
 ```
 
+And then run it on port 80:
+
+```bash
+mkdir -p /tmp/reward-learning/data
+docker run -v /tmp/reward-learning/data/:/scif/data -p 80:80 reward-learning start 
+```
+
+And then open your browser to [127.0.0.1](127.0.0.1) to see the interface!
+
+[images/experiment.png](images/experiment.png)
+
+By default, the data is saved to the filesystem where you mounted the local data folder.
+
+And of course see the [documentation pages](https://expfactory.github.io/customize) for how to
+customize the database, and other configuration. If you need to customize the experiment
+repository cloned from (e.g., if you want to make changes) you can edit this in the
+Dockerfile:
+
+```
+LABEL EXPERIMENT_reward-learning-task /scif/apps/reward-learning-task
+WORKDIR /scif/apps
+RUN expfactory install https://www.github.com/<username>/reward-learning-task
+```
