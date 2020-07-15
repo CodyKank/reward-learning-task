@@ -6,3 +6,20 @@ Hi Friend! This is an Experiment (adopted from [gewimmer-neuro/reward_learning_j
 
 I (@vsoch) did not create the experiment, but it looks like images (and their corresponding id lookup) are stored under [images](images)
 and then listed in [js/list.js](js/list.js)
+
+## Build an Experiment Container
+
+These instructions are also available [here](https://expfactory.github.io/generate#quick-start).
+
+### 1. Create a working directory
+
+```bash
+mkdir -p /tmp/reward-learning
+cd /tmp/reward-learning
+```
+
+### 2. See experiments available
+
+```bash
+docker run quay.io/vanessa/expfactory-builder list
+```

@@ -34,7 +34,7 @@ $(document).ready(function() {
              display_element: "getDisplayElement",
              fullscreen: true,
              on_trial_finish: function(data){
-               addID('reward_learning')
+               addID('reward-learning-task')
              },
 
              on_finish: function(data){
@@ -60,7 +60,7 @@ $(document).ready(function() {
                                  document.location = "/next";
                              } else {
                                  // If error, assue local save
-                                 jsPsych.data.localSave('reward_learning_results.csv', 'csv');
+                                 jsPsych.data.localSave('reward-learning-task_results.csv', 'csv');
                              }
                          }
                      });

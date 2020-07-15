@@ -11,8 +11,8 @@
         "Vanessa Sochat",
         "Russell Poldrack"
     ],
-    "exp_id": "reward_learning",
-    "exp_id": "attention-network-task",
+    "exp_id": "reward-learning-task",
+    "exp_id": "reward-learning-task",
     "name": "Reward Learning",
     "template": "jspsych",
     "reference":"http://science.sciencemag.org/content/338/6104/270",
