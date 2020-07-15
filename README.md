@@ -64,7 +64,7 @@ docker run -v /tmp/reward-learning/data/:/scif/data -p 80:80 reward-learning sta
 
 And then open your browser to [127.0.0.1](127.0.0.1) to see the interface!
 
-[images/experiment.png](images/experiment.png)
+![images/experiment.png](images/experiment.png)
 
 By default, the data is saved to the filesystem where you mounted the local data folder.
 
