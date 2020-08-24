@@ -378,6 +378,62 @@ var userinfo = {
    
 };
 
+function fillArray(value, len) {
+  if (len == 0) return [];
+  var a = [value];
+  while (a.length * 2 <= len) a = a.concat(a);
+  if (a.length < len) a = a.concat(a.slice(0, len - a.length));
+  return a;
+}
+
+var opts = ["Disagree strongly", "Disagree moderately", "Disagree a little",
+  "Neither agree nor disagree", "Agree a little", "Agree moderately", "Agree strongly"
+]
+var scale_reg = {
+  "Disagree strongly": 1,
+  "Disagree moderately": 2,
+  "Disagree a little": 3,
+  "Neither agree nor disagree": 4,
+  "Agree a little": 5,
+  "Agree moderately": 6,
+  "Agree strongly": 7
+}
+var scale_rev = {
+  "Disagree strongly": 7,
+  "Disagree moderately": 6,
+  "Disagree a little": 5,
+  "Neither agree nor disagree": 4,
+  "Agree a little": 3,
+  "Agree moderately": 2,
+  "Agree strongly": 1
+}
+
+var all_pages = [
+  ["Extraverted, enthusiastic.", "Critical, quarrelsome.", "Dependable, self-disciplined.",
+    "Anxious, easily upset.", "Open to new experiences, complex.", "Reserved, quiet.",
+    "Sympathetic, warm.", "Disorganized, careless.", "Calm, emotionally stable.",
+    "Conventional, uncreative."
+  ]
+]
+
+var all_options = [fillArray(opts, 10)]
+
+var score_scale = [
+    [scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev]
+  ]
+
+var survey_block = {
+  type: "poldrack-survey-multi-choice",
+  exp_id: "ten_item_personality",
+  horizontal: true,
+  preamble: '<p><strong>I see myself as:</strong></p>',
+  pages: all_pages,
+  options: all_options,
+  scale: score_scale,
+  show_clickable_nav: true,
+  allow_backward: true,
+  required: [fillArray(true, 10)]
+};
 
 var answer_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
 
@@ -504,7 +560,8 @@ var reward_learning_experiment = [];
 reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 reward_learning_experiment.push(userinfo);
-reward_learning_experiment.push(multi_userinfo);
+//reward_learning_experiment.push(multi_userinfo);
+reward_learning_experiment.push(survey_block);
 // reward_learning_experiment.push(learning_instruct_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<3; i++){
