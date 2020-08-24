@@ -562,7 +562,7 @@ reward_learning_experiment.push(learning_participantexists);
 reward_learning_experiment.push(userinfo);
 //reward_learning_experiment.push(multi_userinfo);
 reward_learning_experiment.push(survey_block);
-// reward_learning_experiment.push(learning_instruct_block);
+reward_learning_experiment.push(learning_instruct_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<3; i++){
 	reward_learning_experiment.push(learning_phase_itis);
