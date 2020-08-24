@@ -366,7 +366,7 @@ var learning_participantexists = {
 	timing_response: 180000000
 };
 
-// Obtain infromation from user
+// Obtain infromation from user for pre-survey questions.
 var userinfo = {
    type: 'survey-text',
     data: {
@@ -376,6 +376,16 @@ var userinfo = {
    questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your Age.</p>',
               '<p class = center-block-text style = "font-size: 20px">Please enter your Gender.</p>'],
    
+};
+
+
+var answer_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
+
+var multi_userinfo = {
+    type: 'survey-multi-choice',
+    questions: [
+        {prompt: "I like vegetables", name: 'Vegetables', options: answer_options, required:true}, 
+    ],
 };
 
 // instructions part 1
@@ -492,6 +502,7 @@ var reward_learning_experiment = [];
 reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 reward_learning_experiment.push(userinfo);
+reward_learning_experiment.push(multi_userinfo);
 // reward_learning_experiment.push(learning_instruct_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<3; i++){
