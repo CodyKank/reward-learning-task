@@ -375,8 +375,8 @@ var userinfo = {
    preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
    questions: [
        //['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
-       {prompt: "What is your age?", rows:5, columns: 40},
-       {prompt: "What is your gender?", rows:5, columns: 40}
+       {"What is your age?", rows:5, columns: 40},
+       {"What is your gender?", rows:5, columns: 40}
    ],
    
 };
