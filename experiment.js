@@ -382,7 +382,7 @@ var userinfo = {
 var answer_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
 
 var multi_userinfo = {
-    type: 'survey-multi-choice',
+    type: 'poldrack-survey-multi-choice',
     data: {
         trial_id: "Pre-survey multi Questions"
     },
