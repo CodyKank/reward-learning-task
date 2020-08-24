@@ -38,7 +38,7 @@ RUN apt-get clean          # tests, mysql,  postgres
 
 LABEL EXPERIMENT_reward-learning-task /scif/apps/reward-learning-task
 WORKDIR /scif/apps
-RUN expfactory install https://www.github.com/crcresearch/reward-learning-task
+RUN expfactory install https://www.github.com/CodyKank/reward-learning-task
 
 
 
