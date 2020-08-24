@@ -372,9 +372,12 @@ var userinfo = {
    data: {
        trial_id: "subject age entry"
    },
-   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
-   rows: [1, 1],
-   columns: [3, 3]
+   questions: [
+       //['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
+       {prompt: "What is your age?", name: 'Age', rows:5, columns: 40},
+       {prompt: "What is your gender?", name: 'Gender',rows:5, columns: 40}
+   ],
+   
 };
 
 // instructions part 1
