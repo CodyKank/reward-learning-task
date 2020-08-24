@@ -11,7 +11,7 @@ var getSubjnum = function () {
 	var stimArray = picArray[subjnum];
 	var subjcode = subjcodeArray[subjnum];
 	if (typeof stimArray == "undefined") {
-		stimArray = picArray[0];
+		stimArray = picArray[1];
 		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>Participant number </p><p class = block-text>" + subjnum + " not found!  </p><p class = block-text>Please <strong>quit</strong> and check the participant number!!</p></div></div>"
 	} else {
 		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue.</p></div></div>"
