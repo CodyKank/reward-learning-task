@@ -369,15 +369,12 @@ var learning_participantexists = {
 // Obtain infromation from user
 var userinfo = {
    type: 'survey-text',
-   /* data: {
+    data: {
        trial_id: "Pre-survey Questions"
-   },*/
+   },
    preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
-   questions: [
-       //['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
-       prompt: 'What is your Age?',
-       prompt: "What is your gender?"
-   ],
+   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your Age.</p>',
+              '<p class = center-block-text style = "font-size: 20px">Please enter your Gender.</p>'],
    
 };
 
