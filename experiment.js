@@ -383,9 +383,10 @@ var answer_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Stro
 
 var multi_userinfo = {
     type: 'survey-multi-choice',
-    questions: [
-        {prompt: "I like vegetables", name: 'Vegetables', options: answer_options, required:true}, 
-    ],
+    data: {
+        trial_id: "Pre-survey multi Questions"
+    },
+    questions: ['<p class = center-block-text style = "font-size: 20px">You are prepared for this Experiment.</p>'],
 };
 
 // instructions part 1
