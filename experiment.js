@@ -370,12 +370,13 @@ var learning_participantexists = {
 var userinfo = {
    type: 'survey-text',
    data: {
-       trial_id: "subject age entry"
+       trial_id: "Pre-survey Questions"
    },
+   preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
    questions: [
        //['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
-       {prompt: "What is your age?", name: 'Age', rows:5, columns: 40},
-       {prompt: "What is your gender?", name: 'Gender',rows:5, columns: 40}
+       {prompt: "What is your age?", rows:5, columns: 40},
+       {prompt: "What is your gender?", rows:5, columns: 40}
    ],
    
 };
