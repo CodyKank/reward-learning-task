@@ -6,7 +6,7 @@
 /* get subject number entry, load stimuli, and report back to subject */
 var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
-	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9]
+	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
 	var subjnum = Number(subjstring);
 	var stimArray = picArray[subjnum];
 	var subjcode = subjcodeArray[subjnum];
@@ -15,9 +15,9 @@ var getSubjnum = function () {
 		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>Participant number </p><p class = block-text>" + subjnum + " not found!  </p><p class = block-text>Please <strong>quit</strong> and check the participant number!!</p></div></div>"
 	} else {
 		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue.</p></div></div>"
-	};
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	answers = genLearnphasestims(stimArray)
+	};
 	return listerrortext
 };
 
