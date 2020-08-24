@@ -366,6 +366,16 @@ var learning_participantexists = {
 	timing_response: 180000000
 };
 
+// Obtain infromation from user
+var userinfo = {
+   type: 'survey-text',
+   data: {
+       trial_id: "subject age entry"
+   },
+   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your Age:</p>'],
+   rows: [1, 1],
+   columns: [3, 3]
+};
 
 // instructions part 1
 var instructions_block = {
@@ -480,6 +490,7 @@ var end_block = {
 var reward_learning_experiment = [];
 reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
+reward_learning_experiment.push(userinfo);
 // reward_learning_experiment.push(learning_instruct_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<3; i++){
