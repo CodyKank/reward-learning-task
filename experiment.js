@@ -386,6 +386,7 @@ var multi_userinfo = {
     data: {
         trial_id: "Pre-survey multi Questions"
     },
+    preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
     questions: ['<p class = center-block-text style = "font-size: 20px">You are prepared for this Experiment.</p>'],
 };
 
