@@ -46,8 +46,7 @@ function getDisplayElement() {
 }
 
 function addID() {
- jsPsych.data.addDataToLastTrial({exp_id: 'reward_learning'})
-}
+ jsPsych.data.addDataToLastTrial({exp_id: 'reward_learning'}) }
 
 var getStim = function() {
 	stim = learnPhaseStimsComplete.image.pop()
@@ -435,16 +434,6 @@ var survey_block = {
   required: [fillArray(true, 10)]
 };
 
-var answer_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
-
-var multi_userinfo = {
-    type: 'poldrack-survey-multi-choice',
-    data: {
-        trial_id: "Pre-survey multi Questions"
-    },
-    preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
-    questions: ['<p class = center-block-text style = "font-size: 20px">You are prepared for this Experiment.</p>'],
-};
 
 // instructions part 1
 var instructions_block = {
@@ -542,6 +531,16 @@ var learning_phase_start = {
 	cont_key: [13]
 };
 
+var ending_task = {
+	type: 'poldrack-text',
+	timing_response: 1800000,
+	data: {
+		trial_id: "learning_phase_intro"
+	},
+	text: '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text> Your exit code is <strong> V I D E O  C A S S E T T E </strong>   Do not lose this Code! Press Enter after writing this code down.</p></div>',
+	cont_key: [13]
+};
+
 var end_block = {
 	type: 'poldrack-text',
 	data: {
@@ -559,9 +558,6 @@ var end_block = {
 var reward_learning_experiment = [];
 reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
-reward_learning_experiment.push(userinfo);
-//reward_learning_experiment.push(multi_userinfo);
-reward_learning_experiment.push(survey_block);
 reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<3; i++){
@@ -570,4 +566,5 @@ for(var i = 0; i<3; i++){
 	reward_learning_experiment.push(learning_phase_trials);
 	reward_learning_experiment.push(learning_phase_feedback);
 }
+reward_learning_experiment.push(ending_task);
 reward_learning_experiment.push(end_block);

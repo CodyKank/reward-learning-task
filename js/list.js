@@ -68,7 +68,7 @@ picArray[753] = ["images/14.png",
   "images/102.png"
 ];  
 subjcodeArray[111] = "kindpeople";
-subjcodeArray[110] = "fuzzynarwal";
+subjcodeArray[110] = "fuzzynarwhal";
 subjcodeArray[134] = "purplebucket";
 subjcodeArray[921] = "bluedinosaur";
 subjcodeArray[753] = "magicconch";
