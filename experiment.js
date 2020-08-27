@@ -319,7 +319,8 @@ var pre_task_block = {
    data: {
        trial_id: "subject number entry"
    },
-   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number (pilot testing: 111 or other in list.js):</p>'],
+   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number (pilot testing: 111 or other in list.js):</p>',
+                '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, i.e. 8/27/2020:</p>'],
    rows: [1, 1],
    columns: [3, 3]
 };
