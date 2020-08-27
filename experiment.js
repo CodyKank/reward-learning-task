@@ -538,7 +538,7 @@ var ending_task = {
 	data: {
 		trial_id: "learning_phase_intro"
 	},
-	text: '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text> Your exit code is <strong> V I D E O  C A S S E T T E </strong>   Do not lose this Code! Press Enter after writing this code down.</p></div>',
+	text: '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>V I D E O  C A S S E T T E</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>',
 	cont_key: [13]
 };
 
@@ -561,7 +561,7 @@ reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
-for(var i = 0; i<3; i++){
+for(var i = 0; i<40; i++){
 	reward_learning_experiment.push(learning_phase_itis);
 	reward_learning_experiment.push(learning_phase_prefix);
 	reward_learning_experiment.push(learning_phase_trials);
