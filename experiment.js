@@ -71,7 +71,7 @@ var getNo = function() {
 var getMissed = function() {
 	var throwaway = answers.yesfdbk.pop()
 	throwaway = answers.nofdbk.pop()
-	return "<div class = containerbox><div class = centerbox><div style='color:red'; class = center-text>Too late!<br>-$0.50</div></div></div>"
+	return "<div class = centerbox><div style='color:red'; class = center-text>Too late!<br>-$0.50</div></div>"
 }
 
 var getITIdurstim = function() {
@@ -528,7 +528,8 @@ var learning_phase_start = {
 	data: {
 		trial_id: "learning_phase_intro"
 	},
-	text: '<div class = centerbox><p class = block-text>Get ready!</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
+	//text: '<div class = centerbox><p class = block-text>Get ready!</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
+	text: '<div class = centerbox><p>Today you will continue learning about lucky and unlucky scenes.  As a reminder, you will see each scene with a "Yes" option above and "No" option below.  For each scene, you must choose one option by using the <strong>up</strong> or <strong>down</strong> arrow key.</p><p class = block-text>Each scene has a different chance of being "lucky". Your task is to maximize your winnings ($) by betting "Yes" on lucky shapesand betting "No" on unlucky shapes.</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
 	cont_key: [13]
 };
 
@@ -559,7 +560,7 @@ var end_block = {
 var reward_learning_experiment = [];
 reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
-reward_learning_experiment.push(instructions_block);
+//reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
 for(var i = 0; i<40; i++){
 	reward_learning_experiment.push(learning_phase_itis);
