@@ -71,7 +71,7 @@ var getNo = function() {
 var getMissed = function() {
 	var throwaway = answers.yesfdbk.pop()
 	throwaway = answers.nofdbk.pop()
-	return "<div class = centerbox><div style='color:red'; class = center-text><p>Too late!<br><br>-$0.50</p></div></div>"
+	return "<div class = containerbox><div class = centerbox><div style='color:red'; class = center-text><p>Too late!<br><br>-$0.50</p></div></div></div>"
 }
 
 var getITIdurstim = function() {
