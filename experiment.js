@@ -8,13 +8,13 @@ var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
 	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
 	var subjnum = Number(subjstring);
-	var stimArray = picArray[subjnum];
-	var subjcode = subjcodeArray[subjnum];
+	var stimArray = picArray[1];
+	var subjcode = subjcodeArray[1];
 	if (typeof stimArray == "undefined") {
 		stimArray = picArray[1];
 		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>Participant number </p><p class = block-text>" + subjnum + " not found!  </p><p class = block-text>Please <strong>quit</strong> and check the participant number!!</p></div></div>"
 	} else {
-		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue.</p></div></div>"
+		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>"
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	answers = genLearnphasestims(stimArray)
 	};
@@ -529,7 +529,7 @@ var learning_phase_start = {
 		trial_id: "learning_phase_intro"
 	},
 	//text: '<div class = centerbox><p class = block-text>Get ready!</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
-	text: '<div class = centerbox><p>Today you will continue learning about lucky and unlucky scenes.  As a reminder, you will see each scene with a "Yes" option above and "No" option below.  For each scene, you must choose one option by using the <strong>up</strong> or <strong>down</strong> arrow key.</p><p>Each scene has a different chance of being "lucky". Your task is to maximize your winnings ($) by betting "Yes" on lucky shapesand betting "No" on unlucky shapes.</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
+	text: '<div class = centerbox><p>oday you will learn about lucky and unlucky scenes. You will see several different scenes. Each scene will have a "Yes" option above, indicating the scene is "lucky", and "No" option below, indicating the scene is "unlucky". For each scene, you must choose one option by using the <strong>up</strong> or <strong>down</strong> arrow key.</p><p>Each scene has a different chance of being "lucky". Your task is to maximize your winnings ($) by betting "Yes" on lucky shapes and betting "No" on unlucky shapes.</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
 	cont_key: [13]
 };
 
