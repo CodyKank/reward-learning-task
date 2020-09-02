@@ -11,8 +11,10 @@ var getSubjnum = function () {
 	var stimArray =picArray[1];
         shuffleArray(stimArray);
 	var subjcode = subjcodeArray[1];
-        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>"
+        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
+        var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
 	jsPsych.pluginAPI.preloadImages(stimArray);
+	jsPsych.pluginAPI.preloadImages(yes_no); // preloading the up and down arrow
 	answers = genLearnphasestims(stimArray)
 	return listerrortext
 };
