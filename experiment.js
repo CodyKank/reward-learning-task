@@ -14,7 +14,6 @@ var getSubjnum = function () {
         var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>"
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	answers = genLearnphasestims(stimArray)
-	};
 	return listerrortext
 };
 
