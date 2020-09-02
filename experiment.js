@@ -8,13 +8,10 @@ var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
 	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
 	var subjnum = Number(subjstring);
-	var stimArray = shuffleArray(picArray[1]);
+	var stimArray =picArray[1];
+        shuffleArray(stimArray);
 	var subjcode = subjcodeArray[1];
-	if (typeof stimArray == "undefined") {
-		stimArray = picArray[1];
-		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>Participant number </p><p class = block-text>" + subjnum + " not found!  </p><p class = block-text>Please <strong>quit</strong> and check the participant number!!</p></div></div>"
-	} else {
-		var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>"
+        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>"
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	answers = genLearnphasestims(stimArray)
 	};
