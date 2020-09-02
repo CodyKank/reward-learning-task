@@ -8,7 +8,7 @@ var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
 	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
 	var subjnum = Number(subjstring);
-	var stimArray = picArray[1];
+	var stimArray = shuffleArray(picArray[1]);
 	var subjcode = subjcodeArray[1];
 	if (typeof stimArray == "undefined") {
 		stimArray = picArray[1];
@@ -21,6 +21,14 @@ var getSubjnum = function () {
 	return listerrortext
 };
 
+
+// Durstenfeld algorithm, taken from https://stackoverflow.com/a/12646864
+var shuffleArray = function (array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+};
 
 var getSubjreport = function () {
 	if (typeof stimArray == "undefined") {
@@ -492,7 +500,7 @@ reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 //reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
-for(var i = 0; i<40; i++){
+for(var i = 0; i<Learn_trials; i++){
 	reward_learning_experiment.push(learning_phase_itis);
 	reward_learning_experiment.push(learning_phase_prefix);
 	reward_learning_experiment.push(learning_phase_trials);
