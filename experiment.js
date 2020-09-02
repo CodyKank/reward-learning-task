@@ -282,8 +282,8 @@ var genLearnphasestims = function (stimArray) {
 				['stim6', stimArray[5], choices[1]],
 				['stim7', stimArray[6], choices[0]],
 				['stim8', stimArray[7], choices[1]],
-				['Yes', stimArray[8], 101],
-				['No', stimArray[9], 102]]
+				['Yes', "images/01.png", 101],
+				['No', "images/02.ong", 102]]
 	learnPhaseStims = [];
 	for (var i = 0; i<8; i++) {
 		var list_stim = {}
