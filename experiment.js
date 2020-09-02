@@ -366,76 +366,6 @@ var learning_participantexists = {
 	timing_response: 180000000
 };
 
-// Obtain infromation from user for pre-survey questions.
-var userinfo = {
-   type: 'survey-text',
-    data: {
-       trial_id: "Pre-survey Questions"
-   },
-   preamble: '<p class = center-block-text style = "font-size: 20px">Pre Survey Questionnaire</p>',
-   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your Age.</p>',
-              '<p class = center-block-text style = "font-size: 20px">Please enter your Gender.</p>'],
-   
-};
-
-function fillArray(value, len) {
-  if (len == 0) return [];
-  var a = [value];
-  while (a.length * 2 <= len) a = a.concat(a);
-  if (a.length < len) a = a.concat(a.slice(0, len - a.length));
-  return a;
-}
-
-var opts = ["Disagree strongly", "Disagree moderately", "Disagree a little",
-  "Neither agree nor disagree", "Agree a little", "Agree moderately", "Agree strongly"
-]
-var scale_reg = {
-  "Disagree strongly": 1,
-  "Disagree moderately": 2,
-  "Disagree a little": 3,
-  "Neither agree nor disagree": 4,
-  "Agree a little": 5,
-  "Agree moderately": 6,
-  "Agree strongly": 7
-}
-var scale_rev = {
-  "Disagree strongly": 7,
-  "Disagree moderately": 6,
-  "Disagree a little": 5,
-  "Neither agree nor disagree": 4,
-  "Agree a little": 3,
-  "Agree moderately": 2,
-  "Agree strongly": 1
-}
-
-var all_pages = [
-  ["Extraverted, enthusiastic.", "Critical, quarrelsome.", "Dependable, self-disciplined.",
-    "Anxious, easily upset.", "Open to new experiences, complex.", "Reserved, quiet.",
-    "Sympathetic, warm.", "Disorganized, careless.", "Calm, emotionally stable.",
-    "Conventional, uncreative."
-  ]
-]
-
-var all_options = [fillArray(opts, 10)]
-
-var score_scale = [
-    [scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev, scale_reg, scale_rev]
-  ]
-
-var survey_block = {
-  type: "poldrack-survey-multi-choice",
-  exp_id: "ten_item_personality",
-  horizontal: true,
-  preamble: '<p><strong>I see myself as:</strong></p>',
-  pages: all_pages,
-  options: all_options,
-  scale: score_scale,
-  show_clickable_nav: true,
-  allow_backward: true,
-  required: [fillArray(true, 10)]
-};
-
-
 // instructions part 1
 var instructions_block = {
 	type: 'poldrack-instructions',
@@ -529,7 +459,7 @@ var learning_phase_start = {
 		trial_id: "learning_phase_intro"
 	},
 	//text: '<div class = centerbox><p class = block-text>Get ready!</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
-	text: '<div class = centerbox><p>oday you will learn about lucky and unlucky scenes. You will see several different scenes. Each scene will have a "Yes" option above, indicating the scene is "lucky", and "No" option below, indicating the scene is "unlucky". For each scene, you must choose one option by using the <strong>up</strong> or <strong>down</strong> arrow key.</p><p>Each scene has a different chance of being "lucky". Your task is to maximize your winnings ($) by betting "Yes" on lucky shapes and betting "No" on unlucky shapes.</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
+	text: '<div class = centerbox><p>Today you will learn about lucky and unlucky scenes. You will see several different scenes. Each scene will have a "Yes" option above, indicating the scene is "lucky", and "No" option below, indicating the scene is "unlucky". For each scene, you must choose one option by using the <strong>up</strong> or <strong>down</strong> arrow key.</p><p>Each scene has a different chance of being "lucky". Your task is to maximize your winnings ($) by betting "Yes" on lucky shapes and betting "No" on unlucky shapes.</p><p class = block-text> Press <strong> Enter </strong> when you are ready.</p></div>',
 	cont_key: [13]
 };
 
