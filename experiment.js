@@ -15,7 +15,7 @@ var getSubjnum = function () {
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	jsPsych.pluginAPI.preloadImages(yes_no); // preloading the up and down arrow
-	answers = genLearnphasestims(stimArray)
+	answers = genLearnphasestims(stimArray,yes_no)
 	return listerrortext
 };
 
@@ -275,7 +275,7 @@ var eachRepNum = 5;
 // 		learnPhaseStims.push(list_stim)
 // 	};
 
-var genLearnphasestims = function (stimArray) {
+var genLearnphasestims = function (stimArray,up_downArray) {
 	var stims = [['stim1', stimArray[0], choices[0]],
 				['stim2', stimArray[1], choices[1]],
 				['stim3', stimArray[2], choices[0]],
@@ -284,8 +284,8 @@ var genLearnphasestims = function (stimArray) {
 				['stim6', stimArray[5], choices[1]],
 				['stim7', stimArray[6], choices[0]],
 				['stim8', stimArray[7], choices[1]],
-				['Yes', "images/01.png", 101],
-				['No', "images/02.png", 102]]
+				['Yes', up_downArray[0], 101],
+				['No', up_downArray[1], 102]]
 	learnPhaseStims = [];
 	for (var i = 0; i<8; i++) {
 		var list_stim = {}
