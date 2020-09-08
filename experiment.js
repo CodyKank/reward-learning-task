@@ -19,6 +19,13 @@ var getSubjnum = function () {
 	return listerrortext
 };
 
+var endingTaskText = function () {
+    var exitCode = exitcodeArray[1];
+    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>' + exitCode + '</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>';
+
+    return exitText
+
+}
 
 // Durstenfeld algorithm, taken from https://stackoverflow.com/a/12646864
 function shuffleArray(array) {
@@ -475,7 +482,7 @@ var ending_task = {
 	data: {
 		trial_id: "learning_phase_intro"
 	},
-	text: '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>V I D E O  C A S S E T T E</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>',
+	text: endingTaskText,
 	cont_key: [13]
 };
 

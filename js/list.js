@@ -1,5 +1,6 @@
 var picArray = [];
 var subjcodeArray = [];
+var exitcodeArray = [];
 
 picArray[1] = [
     "images/03.png",
@@ -81,4 +82,13 @@ picArray[1] = [
     ];  
 
 subjcodeArray[111] = "kindpeople";
+
+exitcodeArray[1] = "videocassette";
+exitcodeArray[2] = "atone";
+exitcodeArray[3] = "amstrad";
+exitcodeArray[4] = "ion";
+exitcodeArray[5] = "magnetic";
+exitcodeArray[6] = "color";
+exitcodeArray[7] = "solution";
+exitcodeArray[8] = "deception";
 
