@@ -8,8 +8,9 @@ var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
 	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
 	var subjnum = Number(subjstring);
-	var stimArray =picArray[1];
+	var stimArray = picArray[1];
         shuffleArray(stimArray);
+        exitcodeArray[9] = subjnum_trial.toString();
 	var subjcode = subjcodeArray[1];
         var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
@@ -20,7 +21,7 @@ var getSubjnum = function () {
 };
 
 var endingTaskText = function () {
-    var exitCode = exitcodeArray[1];
+    var exitCode = exitcodeArray[9];
     exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>' + exitCode + '</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>';
 
     return exitText
@@ -333,7 +334,8 @@ var pre_task_block = {
        trial_id: "subject number entry"
    },
    questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number (pilot testing: 111 or other in list.js):</p>',
-                '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, i.e. 8/27/2020:</p>'],
+                '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, i.e. 8/27/2020:</p>',
+                '<p class = center-block-text style = "font-size: 20px">Please enter which trial day this is, i.e. 3:</p>'],
    rows: [1, 1],
    columns: [3, 3]
 };
