@@ -8,11 +8,11 @@ var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
 	//var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
         var respString = subjnum_trial.responses.split(":");
-        var subString = respString[1].split(",")[0].replace(/['"]+/g, '').replace(/['"]+/g, '');
+        var subString = respString[1].split(",")[0].replace(/['"]+/g, '');
 	var subjnum = Number(subString); // Need to verify correct number here
 	var stimArray = picArray[1];
         shuffleArray(stimArray);
-        exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace(/['"]+/g, '');
+        exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace('}', '');
 	var subjcode = subjcodeArray[1];
         var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
