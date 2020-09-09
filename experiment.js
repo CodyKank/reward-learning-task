@@ -6,11 +6,13 @@
 /* get subject number entry, load stimuli, and report back to subject */
 var getSubjnum = function () {
 	var subjnum_trial = jsPsych.data.getLastTrialData()
-	var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
-	var subjnum = Number(subjstring);
+	//var subjstring = subjnum_trial.responses[7] + subjnum_trial.responses[8] + subjnum_trial.responses[9] // This is where the size of part-id is defined.
+        var respString = subjnum_trial.responses.split(":");
+        var subString = respString[1].split(",")[0].replace(/['"]+/g, '').replace(/['"]+/g, '');
+	var subjnum = Number(subString); // Need to verify correct number here
 	var stimArray = picArray[1];
         shuffleArray(stimArray);
-        exitcodeArray[9] = subjnum_trial.toString();
+        exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace(/['"]+/g, '');
 	var subjcode = subjcodeArray[1];
         var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
@@ -21,8 +23,8 @@ var getSubjnum = function () {
 };
 
 var endingTaskText = function () {
-    var exitCode = exitcodeArray[9];
-    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>' + exitCode + '</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>';
+    var exitnum = Number(exitcodeArray[9]);
+    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>' + exitcodeArray[exitnum] + '</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>';
 
     return exitText
 
@@ -507,7 +509,7 @@ reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 //reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
-for(var i = 0; i<Learn_trials; i++){
+for(var i = 0; i<3; i++){
 	reward_learning_experiment.push(learning_phase_itis);
 	reward_learning_experiment.push(learning_phase_prefix);
 	reward_learning_experiment.push(learning_phase_trials);
