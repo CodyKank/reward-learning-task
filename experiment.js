@@ -24,7 +24,7 @@ var getSubjnum = function () {
 
 var endingTaskText = function () {
     var exitnum = Number(exitcodeArray[9]);
-    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>Your exit code is <p class = block-text>' + exitcodeArray[exitnum] + '</p><br>Do not lose this Code! Press Enter after writing this code down.</p></div>';
+    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>This task is complete!<br>If you, or someone you know, are experiencing a crisis or thinking about taking your own life, please call 1-800-273-8255 to talk to someone who can help.</p><p>Your Survey code is: <p class = block-text>' + exitcodeArray[exitnum] + '</p><br>Please enter this code into mTurk to complete the HIT.</p></div>';
 
     return exitText
 
