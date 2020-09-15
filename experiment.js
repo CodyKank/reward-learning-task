@@ -14,7 +14,7 @@ var getSubjnum = function () {
         shuffleArray(stimArray);
         exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace('}', '');
 	var subjcode = subjcodeArray[1];
-        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong>, with codeword <strong>" + subjcode + "</strong> found!  </p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
+        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong></p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	jsPsych.pluginAPI.preloadImages(yes_no); // preloading the up and down arrow
@@ -24,7 +24,7 @@ var getSubjnum = function () {
 
 var endingTaskText = function () {
     var exitnum = Number(exitcodeArray[9]);
-    exitText = '<div class = centerbox><p class = block-text>Complete!</p><p class = block-text><br>This task is complete!<br>If you, or someone you know, are experiencing a crisis or thinking about taking your own life, please call 1-800-273-8255 to talk to someone who can help.</p><p>Your Survey code is: <p class = block-text>' + exitcodeArray[exitnum] + '</p><br>Please enter this code into mTurk to complete the HIT.</p></div>';
+    exitText = '<div class = centerbox><p class = block-text><br>This task is complete!<br>If you, or someone you know, are experiencing a crisis or thinking about taking your own life, please call 1-800-273-8255 to talk to someone who can help.</p><p>Your Survey code is: <p class = block-text><strong>' + exitcodeArray[exitnum] + '</strong></p><br>Please enter this code into mTurk to complete the HIT.</p></div>';
 
     return exitText
 
