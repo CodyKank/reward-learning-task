@@ -13,10 +13,10 @@ var getSubjnum = function () {
 	var stimArray = picArray[1];
         shuffleArray(stimArray);
         exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace('}', '');
-        if(Number(exitcodeArray[9]) >= 1 && Number(exitCodeArray[9]) <= 7) {
+        if(Number(exitcodeArray[9]) >= 1 && Number(exitcodeArray[9]) <= 7) {
             var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong></p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
         } else {
-            var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>ERROR: Incorrect survey day entered:<strong>" + exitCodeArray[9] + "</strong></p><p> Please refresh the page and try again.</p></div></div>";
+            var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>ERROR: Incorrect survey day entered:<strong>" + exitcodeArray[9] + "</strong></p><p> Please refresh the page and try again.</p></div></div>";
         }
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
 	jsPsych.pluginAPI.preloadImages(stimArray);
