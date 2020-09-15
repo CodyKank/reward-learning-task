@@ -13,8 +13,11 @@ var getSubjnum = function () {
 	var stimArray = picArray[1];
         shuffleArray(stimArray);
         exitcodeArray[9] = respString[3].split(",")[0].replace(/['"]+/g, '').replace('}', '');
-	var subjcode = subjcodeArray[1];
-        var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong></p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
+        if(Number(exitcodeArray[9]) >= 1 && Number(exitCodeArray[9]) <= 7) {
+            var listerrortext = "<div class = centerbox><p class = block-text><div style='color:black'>Participant number </p><p class = block-text><strong>" + subjnum + "</strong></p><p class = block-text>Press <strong>enter</strong> to continue. If this number is incorrect, please reload the page and try again.</p></div></div>";
+        } else {
+            var listerrortext = "<div class = centerbox><p class = block-text><div style='color:red'>ERROR: Incorrect survey day entered:<strong>" + exitCodeArray[9] + "</strong></p><p> Please refresh the page and try again.</p></div></div>";
+        }
         var yes_no = ["images/01.png","images/02.png"] // Holding the image for up and down arrow
 	jsPsych.pluginAPI.preloadImages(stimArray);
 	jsPsych.pluginAPI.preloadImages(yes_no); // preloading the up and down arrow
@@ -335,8 +338,8 @@ var pre_task_block = {
    data: {
        trial_id: "subject number entry"
    },
-   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number (pilot testing: 111 or other in list.js):</p>',
-                '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, i.e. 8/27/2020:</p>',
+   questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number:</p>',
+                '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, example: 9/15/2020:</p>',
                 '<p class = center-block-text style = "font-size: 20px">Please enter which trial day this is, i.e. 3:</p>']
    //rows: [1, 1],
    //columns: [3, 3]
