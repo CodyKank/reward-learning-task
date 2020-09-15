@@ -16,7 +16,8 @@ ADD startscript.sh /startscript.sh
 RUN chmod u+x /startscript.sh
 
 WORKDIR /opt 
-RUN git clone -b master https://www.github.com/expfactory/expfactory
+#RUN git clone -b master https://www.github.com/expfactory/expfactory
+COPY expfactory expfactory
 WORKDIR expfactory 
 RUN cp script/nginx.gunicorn.conf /etc/nginx/sites-enabled/default && \
     cp script/nginx.conf /etc/nginx/nginx.conf

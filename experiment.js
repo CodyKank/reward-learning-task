@@ -337,9 +337,9 @@ var pre_task_block = {
    },
    questions: ['<p class = center-block-text style = "font-size: 20px">Please enter your 3-digit participant number (pilot testing: 111 or other in list.js):</p>',
                 '<p class = center-block-text style = "font-size: 20px">Please Enter the Date today, i.e. 8/27/2020:</p>',
-                '<p class = center-block-text style = "font-size: 20px">Please enter which trial day this is, i.e. 3:</p>'],
-   rows: [1, 1],
-   columns: [3, 3]
+                '<p class = center-block-text style = "font-size: 20px">Please enter which trial day this is, i.e. 3:</p>']
+   //rows: [1, 1],
+   //columns: [3, 3]
 };
 
 // set up post task questionnaire
@@ -516,4 +516,4 @@ for(var i = 0; i<3; i++){
 	reward_learning_experiment.push(learning_phase_feedback);
 }
 reward_learning_experiment.push(ending_task);
-reward_learning_experiment.push(end_block);
+//reward_learning_experiment.push(end_block);
