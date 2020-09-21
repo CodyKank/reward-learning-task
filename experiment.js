@@ -512,7 +512,7 @@ reward_learning_experiment.push(pre_task_block);
 reward_learning_experiment.push(learning_participantexists);
 //reward_learning_experiment.push(instructions_block);
 reward_learning_experiment.push(learning_phase_start);
-for(var i = 0; i<3; i++){
+for(var i = 0; i<Learn_trials; i++){
 	reward_learning_experiment.push(learning_phase_itis);
 	reward_learning_experiment.push(learning_phase_prefix);
 	reward_learning_experiment.push(learning_phase_trials);
